@@ -1,10 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import reactToWebComponent from "react-to-webcomponent";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const WebGreeting = reactToWebComponent(App, React, ReactDOM);
+customElements.define("web-greeting", WebGreeting);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
