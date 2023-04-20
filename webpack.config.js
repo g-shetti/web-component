@@ -1,11 +1,11 @@
 const path = require("path");
-// const HtmlWebPackPlugin = require("html-webpack-plugin")
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    entry: "/src/index.js",
-    output: { path: path.resolve(__dirname, "dist") },
+  entry: "/src/index.js",
+  output: { path: path.resolve(__dirname, "dist") },
   module: {
     rules: [
       {
@@ -38,9 +38,9 @@ module.exports = {
       ],
     }),
 
-    // new HtmlWebPackPlugin({
-    //     template: "./src/index.html"
-    // }),
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+    }),
     // new BundleAnalyzerPlugin
   ],
 };
