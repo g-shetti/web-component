@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import reactToWebComponent from "react-to-webcomponent";
 
-const WebGreeting = reactToWebComponent(App, React, ReactDOM);
+const WebGreeting = reactToWebComponent(App, React, ReactDOM, { dashStyleAttributes: true, shadow: true });
 customElements.define("web-greeting", WebGreeting);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
