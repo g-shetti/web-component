@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin")
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
@@ -39,7 +39,7 @@ module.exports = {
     }),
 
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+        template: "./public/index.html"
     }),
     // new BundleAnalyzerPlugin
   ],
