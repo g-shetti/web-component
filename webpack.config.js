@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin")
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
@@ -19,8 +19,18 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.scss|.css$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          "resolve-url-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ttf|eot|woff|woff2|eot|ico)$/i,
@@ -39,7 +49,7 @@ module.exports = {
     }),
 
     new HtmlWebPackPlugin({
-        template: "./public/index.html"
+      template: "./public/index.html",
     }),
     // new BundleAnalyzerPlugin
   ],
